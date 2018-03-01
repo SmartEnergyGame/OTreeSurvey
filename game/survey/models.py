@@ -26,7 +26,11 @@ class Player(BasePlayer):
     )
 
     q2 = models.CurrencyField(label="Randomly the player choose an option that represents money",
-        choices=[c(1), c(3), c(5)],
+        choices=[
+            [1, '$ 1'],
+            [2, '$ 2 '],
+            [3, '$ 3'],
+        ],
         widget=widgets.RadioSelect,
     )
 
