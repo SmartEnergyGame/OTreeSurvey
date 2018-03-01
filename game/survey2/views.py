@@ -5,7 +5,8 @@ from .models import Constants
 
 
 class MyPage(Page):
-    pass
+    form_model = models.Player
+    form_fields = ['q1', 'q2']
 
 
 class ResultsWaitPage(WaitPage):
@@ -13,9 +14,14 @@ class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
         pass
 
-
 class Results(Page):
-    pass
+    def is_displayed(self):
+        return self.round_number == Constants.num_rounds
+
+    def vars_for_template(self):
+        return {
+            'total': sum([p.q1 for p in self.player.in_all_rounds()]),
+        }
 
 
 page_sequence = [

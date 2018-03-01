@@ -7,6 +7,18 @@
 
 {% block content %}
 
+
     {% next_button %}
 
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    let t = document.getElementsByTagName("li").length
+    for (let i=0; i< t; i++){
+        console.log(i)
+        document.getElementsByTagName("li")[i].style.display = "inline"
+    }
+</script>
 {% endblock %}

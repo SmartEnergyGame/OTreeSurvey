@@ -16,14 +16,23 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
 
-
 class Subsession(BaseSubsession):
     pass
-
 
 class Group(BaseGroup):
     pass
 
-
 class Player(BasePlayer):
-    pass
+    q1 = models.IntegerField(label="Rate from 1 is the worst and 5 the best. How much do you like healthy food?",
+        choices=[1, 3, 5], 
+        widget=widgets.RadioSelect,
+    )
+
+    q2 = models.CurrencyField(label="Randomly chose an option that represents money",
+        choices=[
+            [1, '$ 1'],
+            [2, '$ 2 '],
+            [3, '$ 3'],
+        ],
+        widget=widgets.RadioSelect,
+    )
