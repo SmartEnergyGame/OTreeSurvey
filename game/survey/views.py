@@ -5,7 +5,8 @@ from .models import Constants
 
 
 class MyPage(Page):
-    pass
+    form_model = models.Player
+    form_fields = ['q1', 'q2']
 
 class ResultsWaitPage(WaitPage):
 

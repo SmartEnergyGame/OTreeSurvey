@@ -106,6 +106,13 @@ SESSION_CONFIGS = [
     #     'num_demo_participants': ...,
     #     'app_sequence': ['...'],
     # }
+
+    {
+         'name': 'Survey',
+         'display_name': 'Survey',
+         'num_demo_participants': 2,
+         'app_sequence': ['survey'],
+    }
 ]
 
 # anything you put after the below line will override
