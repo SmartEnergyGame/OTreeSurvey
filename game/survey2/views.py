@@ -21,6 +21,7 @@ class Results(Page):
     def vars_for_template(self):
         return {
             'total': sum([p.q1 for p in self.player.in_all_rounds()]),
+            'before': self.player.participant.vars['round1'],
         }
 
 
