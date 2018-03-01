@@ -14,7 +14,13 @@ class ResultsWaitPage(WaitPage):
         pass
 
 class Results(Page):
-    pass
+    def is_displayed(self):
+        return self.round_number == Constants.num_rounds
+
+    def vars_for_template(self):
+        return {
+            'total': sum([p.q1 for p in self.player.in_all_rounds()]),
+        }
 
 page_sequence = [
     MyPage,
