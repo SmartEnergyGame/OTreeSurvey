@@ -18,7 +18,13 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     pass
-
+    """
+    def set_payoffs(self):
+        people = self.get_players()
+        for p in people:
+            p.participant.vars['round1'] = sum([p.q1 for p in self.player.in_all_rounds()])
+            print("arrive ---##############################")
+    """
 class Player(BasePlayer):
     q1 = models.IntegerField(label="Rate from 1 is the worst and 5 the best. How much do you like healthy food?",
         choices=[1, 3, 5], 

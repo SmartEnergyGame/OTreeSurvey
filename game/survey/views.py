@@ -18,6 +18,7 @@ class Results(Page):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
+        self.player.participant.vars['round1'] = sum([p.q1 for p in self.player.in_all_rounds()])
         return {
             'total': sum([p.q1 for p in self.player.in_all_rounds()]),
         }
