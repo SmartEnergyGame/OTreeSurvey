@@ -8,8 +8,9 @@
 {% block content %}
     <h1>The first answer is: {{player.q1}}</h1>
     <h1>The second answer is: {{player.q2}}</h1>
-    <h1>Total: {{total}}</h1>
-    <h1>Total before app: {{before}}</h1>
+    <h1>Total in this session: {{total}}</h1>
+    <h1>Total in the last app: {{before}}</h1>
+    <h1>Total : {{currently_last}}</h1>
     {% next_button %}
 {% endblock %}
 

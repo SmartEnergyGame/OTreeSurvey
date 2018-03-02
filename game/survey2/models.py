@@ -25,7 +25,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     q1 = models.IntegerField(label="Rate from 1 is the worst and 5 the best. How much do you like healthy food?",
         choices=[1, 3, 5], 
-        widget=widgets.RadioSelect,
+        widget=widgets.RadioSelectHorizontal,
     )
 
     q2 = models.CurrencyField(label="Randomly chose an option that represents money",
@@ -34,5 +34,5 @@ class Player(BasePlayer):
             [2, '$ 2 '],
             [3, '$ 3'],
         ],
-        widget=widgets.RadioSelect,
+        widget=widgets.RadioSelectHorizontal,
     )

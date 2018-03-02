@@ -8,7 +8,6 @@ class MyPage(Page):
     form_model = models.Player
     form_fields = ['q1', 'q2']
 
-
 class ResultsWaitPage(WaitPage):
 
     def after_all_players_arrive(self):
@@ -20,10 +19,10 @@ class Results(Page):
 
     def vars_for_template(self):
         return {
-            'total': sum([p.q1 for p in self.player.in_all_rounds()]),
+            'total': sum([p.q2 for p in self.player.in_all_rounds()]),
             'before': self.player.participant.vars['round1'],
+            'currently_last': self.player.participant.vars['round1'] + sum([p.q2 for p in self.player.in_all_rounds()]),
         }
-
 
 page_sequence = [
     MyPage,
